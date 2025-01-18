@@ -4,3 +4,10 @@
 # Между словами вместо пробела ставится символ "_".
 # После записи откройте этот файл, считайте содержимое и выведите его на экран.
 
+
+f = open('task4.txt', 'w', encoding='utf-8')
+for i in range(5):
+    a = input().split()
+    for k in range(len(a)):
+        a[k] = a[k].upper()
+    f.write(f'{'-'.join(a)} \n')

@@ -6,6 +6,8 @@
 # слово2: количество
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
+from fileinput import close
+
 import numpy
 import numpy as np
 
@@ -21,9 +23,14 @@ with open('task3.txt', encoding='utf-8') as f:
     a = np.array(''.join(e).split())
     k = np.unique(a, return_counts=True)
     d = {}
-    print(k[0])
+
     b = k[0]
     c = k[1]
     for i in range(len(b)):
-        d[b[i]] = c[i]
-    print(d)
+        d[str(b[i])] = str(c[i])
+
+    keys = sorted(d, key=str.lower)
+    file = open('task3_1.txt', 'w', encoding='utf-8')
+    for i in keys:
+        file.write(f'{i}: {d[i]} \n')
+    close()
