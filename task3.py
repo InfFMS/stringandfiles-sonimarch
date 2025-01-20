@@ -21,6 +21,8 @@ with open('task3.txt', encoding='utf-8') as f:
         e.remove('.')
 
     a = np.array(''.join(e).split())
+    for i in range(len(a)):
+        a[i] = a[i].lower()
     k = np.unique(a, return_counts=True)
     d = {}
 

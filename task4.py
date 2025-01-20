@@ -6,7 +6,7 @@
 
 
 f = open('task4.txt', 'w', encoding='utf-8')
-for i in range(5):
+for i in range(int(input())):
     a = input().split()
     for k in range(len(a)):
         a[k] = a[k].upper()
